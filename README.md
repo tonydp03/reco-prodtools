@@ -133,6 +133,14 @@ Rule of thumb for GEN-SIM-DIGI: 4 events per `1nh`:
 ### Close-by gun
 
 Another gun that could be used is `--gunMode closeby`, which is capable of creating several vertices. Mind that it is only available in `CMSSW_10_6_0` or later.
+Several parameters can be set and are described in the table below.
+
+| Parameter | Usage |
+| --------- | ----- |
+| EnMin / EnMax | Each particle will be shot with a random energy in this range | 
+| RMin / RMin | Each particle will be shot with
+
+<!--
 With this choice particles can be produced with random energy, R and Z in a specified range. When more than
 one particle are asked to be produced, then each particle will be created at a different vertex,
 equally spaced by Delta, the arc-distance between two consecutive vertices
@@ -145,7 +153,7 @@ useful e.g. when someone wants to shoot straight to the scintillator part. Keep 
 neither adding the antiparticle nor adding the `--randomShoot` option.
 As an example, the command below will produce `NEVENTS` GEN-SIM-DIGI events with `NPART` sets of particles (per event) of type `PART_PDGID`
 in the energy range from `EMIN` to `EMAX` (Pt option not available), radius range from `RMIN` to `RMAX`, z position from `ZMIN` to `ZMAX`, parallel to the beamline, with a distance between the particles vertices of deltaPhi = DELTA/R.
-
+-->
 ```shell
   python SubmitHGCalPGun.py
   --datTier GSD
