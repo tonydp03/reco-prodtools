@@ -137,8 +137,12 @@ Several parameters can be set and are described in the table below.
 
 | Parameter | Usage |
 | --------- | ----- |
-| EnMin / EnMax | Each particle will be shot with a random energy in this range | 
-| RMin / RMin | Each particle will be shot with
+| EnMin / EnMax | Each particle will be shot with a random energy within this range | 
+| RMin / RMin | All the particles will be shot with a random R (distance from the beamline) within this range |
+| ZMin / ZMin | Each particle will be shot with a random Z (depth) within this range |
+| Delta       | If `Overlapping` is `True`, each particle will be shot within a window [`R-Delta`, `R+Delta`],[`phi-Delta/R`, `phi+Delta/R`]. If `Overlapping` is `False`, it is the arc-distance between two consecutive vertices over the circle of radius `R`|
+
+
 
 <!--
 With this choice particles can be produced with random energy, R and Z in a specified range. When more than
