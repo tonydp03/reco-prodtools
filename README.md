@@ -137,10 +137,17 @@ Several parameters can be set and are described in the table below.
 
 | Parameter | Usage |
 | --------- | ----- |
-| EnMin / EnMax | Each particle will be shot with a random energy within this range | 
-| RMin / RMin | All the particles will be shot with a random R (distance from the beamline) within this range |
-| ZMin / ZMin | Each particle will be shot with a random Z (depth) within this range |
-| Delta       | If `Overlapping` is `True`, each particle will be shot within a window [`R-Delta`, `R+Delta`],[`phi-Delta/R`, `phi+Delta/R`]. If `Overlapping` is `False`, it is the arc-distance between two consecutive vertices over the circle of radius `R`|
+|ADD PARTID HERE |
+| `EnMin`/`EnMax` | Each particle will be shot with a random `E` (energy) within this range | 
+| `RMin`/`RMin` | All the particles will be shot with a random `R` (distance from the beamline) within this range |
+| `ZMin`/`ZMin` | Each particle will be shot with a random `Z` (depth) within this range |
+| `Delta` | If `Overlapping` is `True`, each particle will be shot within a window [`R-Delta`, `R+Delta`],[`phi-Delta/R`, `phi+Delta/R`]. If `Overlapping` is `False`, it is the arc-distance between two consecutive vertices over the circle of radius `R` |
+| `Pointing` | If `True`, particles are shot pointing to (0,0,0). If `False`, they will be produced parallel to the beamline |
+| `Overlapping` | If `True`, particles will be shot in a window as described for `Delta` and showers can overlap. If `False` particles are separated by a distance `DeltaPhi=Delta/R` |
+| `RandomShoot` | If `True`, a random number of particles will be shot in the range [`1`, `fNParticles-1`]. If `False`, `fNParticles` will be shot |
+| `NParticles` | Either the number or the maximum number of particles to shoot, as described for `RandomShoot` |
+| `MinPhi`/`MaxPhi` | A random `phi` is selected within this range. Then each particle will be shot with `phi` within the range [`phi-Delta/R`, `phi+Delta/R`] if `Overlapping` is `True`, otherwise `phi` will be increased by `Delta/R` with respect to the previous particle shot |
+| `MinEta`/`MaxEta` | Not used at the moment |
 
 
 
