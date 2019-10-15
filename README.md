@@ -137,7 +137,7 @@ Several parameters can be set and are described in the table below.
 
 | Parameter | Usage |
 | --------- | ----- |
-|ADD PARTID HERE |
+| `PartID` | Each particle will be produced with a pdg ID picked randomly from this vector |
 | `EnMin`/`EnMax` | Each particle will be shot with a random `E` (energy) within this range | 
 | `RMin`/`RMin` | All the particles will be shot with a random `R` (distance from the beamline) within this range |
 | `ZMin`/`ZMin` | Each particle will be shot with a random `Z` (depth) within this range |
@@ -147,24 +147,11 @@ Several parameters can be set and are described in the table below.
 | `RandomShoot` | If `True`, a random number of particles will be shot in the range [`1`, `fNParticles-1`]. If `False`, `fNParticles` will be shot |
 | `NParticles` | Either the number or the maximum number of particles to shoot, as described for `RandomShoot` |
 | `MinPhi`/`MaxPhi` | A random `phi` is selected within this range. Then each particle will be shot with `phi` within the range [`phi-Delta/R`, `phi+Delta/R`] if `Overlapping` is `True`, otherwise `phi` will be increased by `Delta/R` with respect to the previous particle shot |
-| `MinEta`/`MaxEta` | Not used at the moment |
+| `MinEta`/`MaxEta` | Each particle could be shot with a random `eta` within this range. Although, it's not used at the moment |
 
-
-
-<!--
-With this choice particles can be produced with random energy, R and Z in a specified range. When more than
-one particle are asked to be produced, then each particle will be created at a different vertex,
-equally spaced by Delta, the arc-distance between two consecutive vertices
-over the circle of radius R. Also, there is the `--pointing` option which if used particles will be produced parallel to the beamline,  otherwise they will be pointing to (0,0,0). Furthermore, there is the `--overlapping` option that if used then
-particles will be generated in a window [phiMin,phiMax], [rMin,rMax], otherwise with a DeltaPhi=Delta/R.
-Another option is `--randomShoot` which if used will shoot a random number of particles. However, this option should be used alongside the `--nRandomPart` in order for the gun to know the upper limit on how many particles to shoot. The `--nRandomPart` option shouldn't be confused with the size of the `--partID` option, since with `--partID` we are setting the particles we are interesting in producing, while with `--nRandomPart` we are randomly choosing the number we want to shoot out of those `--partID` ids.
-Apart from producing multiple particles, this gun could also produce a single particle wherever the user wishes, having always the
-nice feature of assigning to the vertex the time required to travel from (0,0,0) to the desired location. This could be
-useful e.g. when someone wants to shoot straight to the scintillator part. Keep in mind that in this case there is no sense of
-neither adding the antiparticle nor adding the `--randomShoot` option.
 As an example, the command below will produce `NEVENTS` GEN-SIM-DIGI events with `NPART` sets of particles (per event) of type `PART_PDGID`
 in the energy range from `EMIN` to `EMAX` (Pt option not available), radius range from `RMIN` to `RMAX`, z position from `ZMIN` to `ZMAX`, parallel to the beamline, with a distance between the particles vertices of deltaPhi = DELTA/R.
--->
+
 ```shell
   python SubmitHGCalPGun.py
   --datTier GSD
