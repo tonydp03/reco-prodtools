@@ -147,7 +147,7 @@ Several parameters can be set and are described in the table below.
 | `RandomShoot` | If `True`, a random number of particles will be shot in the range [`1`, `fNParticles-1`]. If `False`, `fNParticles` will be shot |
 | `NParticles` | Either the number or the maximum number of particles to shoot, as described for `RandomShoot` |
 | `MinPhi`/`MaxPhi` | A random `phi` is selected within this range. Then each particle will be shot with `phi` within the range [`phi-Delta/R`, `phi+Delta/R`] if `Overlapping` is `True`, otherwise `phi` will be increased by `Delta/R` with respect to the previous particle shot |
-| `MinEta`/`MaxEta` | Each particle could be shot with a random `eta` within this range. Although, it's not used at the moment |
+| `MinEta`/`MaxEta` | Each particle could be shot with a random `eta` within this range. Although, these parameters are not used at the moment |
 
 As an example, the command below will produce `NEVENTS` GEN-SIM-DIGI events with `NPART` sets of particles (per event) of type `PART_PDGID`
 in the energy range from `EMIN` to `EMAX` (Pt option not available), radius range from `RMIN` to `RMAX`, z position from `ZMIN` to `ZMAX`, parallel to the beamline, with a distance between the particles vertices of deltaPhi = DELTA/R.
